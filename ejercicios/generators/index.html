@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Generadores</h1>
+    </header>
+    <main>
+        <section>
+            <p>Abre la consola</p>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        function* sampleGenerator(){
+            console.log('Start');
+            yield 1;// este valor lo devuelve en cada llamada a next, pero devolviendoo el siguiente que tenga en yield
+            yield 2;
+            yield 3;
+            console.log('End');
+        }
+
+        function* fibonaciSerie(){
+            let a = 1;
+            let b = 1;
+            while (true) {
+                const nextNumber = a + b;
+                a = b;
+                b = nextNumber;
+                yield nextNumber;
+            }
+        }
+    </script>
+</body>
+</html>

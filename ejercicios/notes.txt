@@ -1,0 +1,16 @@
+abstract syntax tree (AST)
+se compila a bytecode
+bytecode pasa a optimizacion de codigo y genera un codigo optimizado
+
+parsing es 15 - 20% del proceso de ejecucion
+
+la mayoria del js no se ejecuta
+
+bundling y spliting code deben ser implementados
+
+lazy parsing
+
+tokens js hace el parseo de cada instruccion para identificar que esta haciendo 
+esprima.org
+
+los getters y setters son funciones que se pueden usar en un objeto para tener propiedades virtuales (propiedades transformadas u operaciones transofrmadas, reciben un parametro (set) o retornan un valor (get))

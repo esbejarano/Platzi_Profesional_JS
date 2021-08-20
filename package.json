@@ -1,0 +1,23 @@
+{
+  "name": "platzi-profesional-js",
+  "version": "1.0.0",
+  "description": "Proyecto del Curso Profesional de JavaScript de la Escuela de JavaScript de Platzi.",
+  "license": "MIT",
+  "author": "Erick Bejarano George<erick.935@gmail.com>",
+  "keywords": [
+    "platzi"
+  ],
+  "scripts": {
+    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0",
+    "typescript": "^4.3.5"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "@sparragus/platzimediaplayer": "^1.0.0"
+  }
+}

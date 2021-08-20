@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>prototypee</h1></header>
+    <section>
+        <p>SomeObject.prototype es un objeto donde definimos el tipo de las instancias de someObject. Es decir las instancias de someObject van a "heredar" de someobject.protoype</p>
+    </section>
+    <script>
+        function Hero(name) {
+            this.name = name;
+        }
+
+        Hero.prototype.saludar = function () {
+            console.log(`Me llamo ${this.name}`);
+        }
+        const zelda = new Hero("Zelda");
+        const link = new Hero("Link");
+        zelda.saludar();
+        link.saludar();
+        console.log(Object.getPrototypeOf(zelda));
+        //herencia prototypal
+        // en js todo son objetos, hasta las funciones, prototype lo que es es una forma de acceder 
+
+    </script>
+</body>
+</html>

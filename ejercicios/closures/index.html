@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // IIFE - Imediatly invoce function expression
+    (function() {
+        let color = 'green'; 
+        function printColor() {
+            console.log(color);
+        }
+        printColor();
+    })();
+    function makeColorPrinter(color){
+        let colorMessage = `The color is ${color}`;
+        return function () {
+            console.log(colorMessage);
+        }
+    }
+    let greenColorPrinter = makeColorPrinter('green');
+    greenColorPrinter();
+    // las closures son las referencias que pueden hacer a valores funciones que se definieron y se retornaron
+    // ejemplo una funcion que retorna una funcion, sera capaz de recordar el valor con el cual fue definida.
+    // las closures sirven tambien para encapsular los valores de los objetos y solo se puedan acceder con acciones
+
+    function makeCounter(n){
+        let count = n;
+        return {
+            increase: function() {return ++count},
+            decrease: function() {return --count;},
+            getCount: function() {return count;}
+        }
+    }
+    let counter = makeCounter(3);
+    console.log(counter.increase());
+    console.log(counter.increase());
+    console.log(counter.increase());
+    console.log(counter.increase());
+    console.log(counter.increase());
+    console.log(counter.decrease());
+    console.log(counter.decrease());
+    console.log(counter.decrease());
+    console.log(counter.getCount());
+    </script>
+</body>
+</html>

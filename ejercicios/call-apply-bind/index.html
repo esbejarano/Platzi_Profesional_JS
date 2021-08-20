@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>call apply bind</h1>
+    </header>
+    <section>
+        <ul>
+            <li>
+                <button class="call-to-action">Aprender</button>
+            </li>
+            <li>
+                <button class="call-to-action">Aprender Mas</button>
+            </li>
+            <li>
+                <button class="call-to-action">Nunca parar de aprender</button>
+            </li>
+        </ul>
+    </section>
+    <script>
+
+        // call sirve para establecer el objeto this en una funcion
+        function saludar() {
+            console.log(`Hola soy ${this.lastname}, ${this.name}`);
+        }
+
+        const erick = {
+            name: 'Erick',
+            lastname: 'Bejarano George'
+        };
+        const alejandra = {
+            name: 'Alejandra',
+            lastname: 'Montoya'
+        };
+        // establecer el this de la funcion
+        saludar.call(erick);
+
+        function caminar(meters, direction) {
+            console.log(`${this.name} camina ${meters} metros hacia ${direction}`);
+        }
+        //establecer el this de la funcion a la vez que se pasan los argumentos
+        caminar.call(erick, 400, "norte");
+        // establecer el this de la funcion pero los argumentos van en un array.
+        caminar.apply(erick, [ 500, "sur"]);
+        // Call - Comma
+        // Apply - array
+
+        // con bind se puede cambiar el objeto this pasado a una funcion
+        const saludaAleja = saludar.bind(alejandra);
+        saludaAleja();
+        const alejaCamina = caminar.bind(alejandra);
+        alejaCamina(800, "Oriente");
+
+        const buttons = document.getElementsByClassName("call-to-action");document
+        Array.prototype.forEach.call(buttons, button => {
+            button.onclick = () => alert("nunca pares de aprender")
+        });
+    </script>
+</body>
+</html>
